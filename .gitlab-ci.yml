@@ -1,19 +1,19 @@
 .docker:
-  image: gradle:7.4.2-jdk17
+  image: docker:${DOCKER_VERSION}-git
   services:
     - docker:${DOCKER_VERSION}-dind
   # variables:
-    # See https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#docker-in-docker-with-tls-enabled-in-the-docker-executor
-    # DOCKER_HOST: tcp://docker:2376
+  #   # See https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#docker-in-docker-with-tls-enabled-in-the-docker-executor
+  #   DOCKER_HOST: tcp://docker:2376
 
-    # DOCKER_TLS_VERIFY: '1'
-    # DOCKER_TLS_CERTDIR: '/certs'
-    # DOCKER_CERT_PATH: '/certs/client'
+  #   DOCKER_TLS_VERIFY: '1'
+  #   DOCKER_TLS_CERTDIR: '/certs'
+  #   DOCKER_CERT_PATH: '/certs/client'
 
-    # # Faster than the default, apparently
-    # DOCKER_DRIVER: overlay2
+  #   # Faster than the default, apparently
+  #   DOCKER_DRIVER: overlay2
 
-    # DOCKER_VERSION: '20.10'
+  #   DOCKER_VERSION: '20.10'
 
 .dagger:
   extends: [.docker]
